@@ -1,0 +1,2 @@
+- See all branches (remote and local)
+  $ git branch -a
