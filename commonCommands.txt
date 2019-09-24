@@ -1,0 +1,6 @@
+- See all branches (remote and local)
+  $ git branch -a
+
+- Set email and user name (omit --global to set identiy in only this rep)
+  $ git config --global user.email "you@eample.com"
+  $ git config --global user.name "Your Name"
