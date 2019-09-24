@@ -2,3 +2,4 @@
 
 # To display Git working branch in bash shell
 export PS1="\\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
+
