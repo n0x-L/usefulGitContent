@@ -1,0 +1,26 @@
+Wireframe:
+	- number of ways to do this
+	- easiest way is glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // fill all the triangles
+	- glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) // draw all the lines
+
+	- map two above lines to individual bottons, having the frams is sufficient (ie wireframe)
+
+Gouroud and phong shading:
+	- See learn openGL, make sure you understand, read chapter on shading
+
+
+Flat shading:
+	- We saw before with goroud shading we can do our normals calculations for each face and do 		  a lighting equation to get a color for each vertex, then linear interpolate
+	- We could also do Phong, where we linearly interpolate the normals for each vertex, take a 		  middle point normal, then do the lighting equation there.
+	- In Flat Shading we have to get the same normal at every vertex and every point on the 
+	 surface. This would give us a flat looking object (pics of this in asn pdf).
+	- So what we need to do is a way to get a single normal per face, and opengl only
+	 lets us store per vertex, so what do we do? Easiest way:
+		- Recall the pipeline: 
+			'App-VertexShader-PrimitiveAssemble-GeometryShader-FragmentShader'
+		- For the inputs to the GeometryShader, we re-calculate the normal and then
+		  pass it to the phong shading we wrote in the fragment shader, that's it.
+		- The GeometryShader is in texture_gs.gls, and the inputs are triangles, output
+		  is triangle strip, make the names the same so you can pass the data, and set
+		  up the 3 vertices you're outputting the triangle as
+		- GeometryShaders take i
